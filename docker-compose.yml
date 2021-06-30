@@ -1,0 +1,22 @@
+version: "3"
+services:
+  mysql-standalone:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=@Esraa100
+      - MYSQL_DATABASE=system_db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=@Esraa100
+    ports:
+      - 3307:3306
+
+  docker-springboot-example:
+    image: docker-springboot-example:latest
+    ports:
+      - 8086:8086
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-standalone
