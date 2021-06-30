@@ -5,7 +5,7 @@
 ### System workflow:
 
 
-![Archticture Workflow](https://github.com/EsraaHamouda/notification-svc/blob/main/src/main/resources/archticure_diagram/archticture.png)
+![Archticture Workflow](https://github.com/EsraaHamouda/notifications-service/blob/master/src/main/resources/archticure_diagram/archticture.png)
 
 
 ### Implementation Details
