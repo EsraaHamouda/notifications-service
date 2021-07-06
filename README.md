@@ -52,8 +52,7 @@
        
     
       So, after saving the notification instances to DB, the job processor will fetch
-      a limited amount of notifications and send them to users(Assumption: the provider
-      is logging the notification info instead of the actual implementation of sending messages)
+      a limited amount of notifications and send them to users.
 
 4. **Used design patterns**
 
