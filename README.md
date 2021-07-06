@@ -10,7 +10,7 @@
 
 ### Implementation Details
 
-(**Assumption**: An administrator should create a notification template first before using send notification API in order to hanlde multiple notification languages with dynamic data)
+(**Assumption**: An administrator should create a notification template first before using send notification API in order to handle multiple notification languages with dynamic data)
 
 **Notification service consists of 3 major components**
 1. **Notification management system (setup phase):**
