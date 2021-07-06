@@ -31,7 +31,7 @@
 
 2. **Notification System:**
 
-- The administartor can send individual or group notification by passing a notification object to call notification API.
+- The administartor can send individual or group notification by passing a notification object to the call notification API.
     * Choose the notification provider either SMS or Push notification.
     * Specifiy the template name.
     * Pass a map of key value pairs of the placeholders in certain template with its actual values.
