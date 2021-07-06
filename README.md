@@ -31,26 +31,26 @@
 
 2. **Notification System:**
 
-- The administartor can send individual or group notification by passing a notification object to call notification API
-    * Specify the notification provider SMS or Push notification
-    * Specifiy the template name
-    * Pass a map (key value pairs) of the placeholders in certain template with its actual values.
-    * Send the group or user Id based on the type specified
+- The administartor can send individual or group notification by passing a notification object to call notification API.
+    * Choose the notification provider either SMS or Push notification.
+    * Specifiy the template name.
+    * Pass a map of key value pairs of the placeholders in certain template with its actual values.
+    * Send the group or user Id based on the type specified.
 
 
 
 3. **Notification processor job:**
 
-    - As required that the notification provider can **handle limited number of notification per minute**
-      (this limit is configured as a variable). Notification Handler component unified the notifications
+    - As required that the notification provider can **handle limited number of notifications per minute**
+      (this limit is configured as a variable). The notification handler component unifies the notifications
       type based on the receiver,  in other word if there is a group notification it will be transformed to individual
-      notification by fetching the user list per user group and save these notification instances to database.
+      notification by fetching the user list per user group and saves these notification instances to database.
 
-    - in order to facilitate the notification job processor to handle the limited capacity(Assumption: as per it is not
+    - In order to facilitate the notification job processor to handle the limited capacity(Assumption: as per it is not
       required not to integrate with real notification APIs like  using a publish /subscribe methodology
-      to certain topic or websockets to register users to it to broadcast messages.
-    -  If there is a group notification where the group contains large num of users that may exceed
-       the limited provider capacity and this will make the service down).
+      to certain topic or websockets to register users to it to broadcast messages. If there is a group notification where
+      the group contains a large num of users that may exceed the limited provider capacity and this will make the service down).
+       
     - So, After saving the notification instances to DB job processor will fetch
       limited amount of notification and send them to users(Assumption: provider
       just logging the notification info instead of the actual implementation of sending messages)
