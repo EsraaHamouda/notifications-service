@@ -46,11 +46,7 @@
       type based on the receiver. In other words, if there is a group notification it will be transformed to individual
       notification by fetching the user list per user group and saves these notification instances to database to facilitate the notification job processor to handle the limited capacity. 
 
-    - (Assumption: Since it is not required to integrate with a real notification APIs like publish/subscribe or websockets to broadcast messages, the service may go down when handling a large group. If there is a group notification where the group contains a large num of users, that might exceed the limited provider capacity).
-       
-    
-      So, after saving the notification instances to the database, the job processor will fetch
-      a limited amount of notifications and send them to users.
+    - Since it is not required to integrate with a real notification APIs like publish/subscribe or websockets to broadcast messages, the service may go down when handling a large group. If there is a group notification where the group contains a large num of users, that might exceed the limited provider capacity. To avoid this problem the job processor will fetch a limited amount of notifications and send them to users.
 
 4. **Used Design patterns**
 
