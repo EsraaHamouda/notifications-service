@@ -2,7 +2,7 @@
 
 
 
-### System workflow:
+### System Workflow:
 
 
 ![Archticture Workflow](https://github.com/EsraaHamouda/notifications-service/blob/master/src/main/resources/archticure_diagram/archticture.png)
@@ -43,7 +43,7 @@
 
     - As required that the notification provider can **handle limited number of notifications per minute**
       (this limit is configured as a variable). The notification handler component unifies the notifications
-      type based on the receiver, in other word if there is a group notification it will be transformed to individual
+      type based on the receiver. In other words, if there is a group notification it will be transformed to individual
       notification by fetching the user list per user group and saves these notification instances to database to facilitate the notification job processor to handle the limited capacity. 
 
     - (Assumption: Since it is not required to integrate with a real notification APIs like publish /subscriben or websockets to register users to broadcast messages. If there is a group notification where the group contains a large num of users, that might exceed the limited provider capacity and this will make the service down).
