@@ -39,7 +39,7 @@
 
 
 
-3. **Notification processor job:**
+3. **Notification Processor Job:**
 
     - As required that the notification provider can **handle limited number of notifications per minute**
       (this limit is configured as a variable). The notification handler component unifies the notifications
