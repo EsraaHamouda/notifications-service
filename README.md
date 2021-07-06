@@ -10,28 +10,28 @@
 
 ### Implementation Details
 
-(**Assumption**: An administrator should create a notification template first before using send notification API in order to handle multiple notification languages with dynamic data)
+(**Assumption**: An administrator should create a notification template first before using the send notification API in order to handle multiple notification languages with dynamic data)
 
 **Notification service consists of 3 major components**
 1. **Notification management system (setup phase):**
 
-- facilitate the process of creating dynamic notification with multiple languages.
-  So, administrator can create a certain notification template using the following criteria:
-    *   Add a template name
+- Facilitate the process of creating a dynamic notification with multiple languages.
+  An administrator can create a certain notification template using the following criteria:
+    * Add a template name
     * Add the notification text body and title with many languages(ar, en, fr, ...)
-    * if notification text contains any dynamic information , they should be handled using placeholders which will
-      placed with actual data every time administator uses this service with different values
+    * if the notification text contains any dynamic information, they should be handled using placeholders which will be
+      replaced with actual data every time administator uses this service with different values
 
-  For example : Dear Customer, you got a discount up to discount_percentage for the next num_rides rides till end_date
-  (discount_percentage, num_rides, end_date, ...) -> placeholders
+  For example : Dear Customer, you got a discount up to discount_percentage for the next num_rides rides till end_date.
+  (discount_percentage, num_rides, end_date, ...) are placeholders.
 
-    * Create users
-    * Create groups and add user to them
-    * Get template metadata API by name
+    * Create users.
+    * Create groups and add user to them.
+    * Get template metadata API by name.
 
 2. **Notification System:**
 
-- Administartor can send Individual or group notification by passing a notification object to send notification API
+- The administartor can send individual or group notification by passing a notification object to call notification API
     * Specify the notification provider SMS or Push notification
     * Specifiy the template name
     * Pass a map (key value pairs) of the placeholders in certain template with its actual values.
