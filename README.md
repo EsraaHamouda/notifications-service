@@ -13,7 +13,7 @@
 (**Assumption**: An administrator should create a notification template first before using the send notification API in order to handle multiple notification languages with dynamic data)
 
 **Notification service consists of 3 major components**
-1. **Notification management system (setup phase):**
+1. **Notification Management System (setup phase):**
 
 - Facilitate the process of creating a dynamic notification with multiple languages.
   An administrator can create a certain notification template using the following criteria:
@@ -46,13 +46,13 @@
       type based on the receiver. In other words, if there is a group notification it will be transformed to individual
       notification by fetching the user list per user group and saves these notification instances to database to facilitate the notification job processor to handle the limited capacity. 
 
-    - (Assumption: Since it is not required to integrate with a real notification APIs like publish/subscriber or websockets to register users to broadcast messages, the may go down when handling a large group. If there is a group notification where the group contains a large num of users, that might exceed the limited provider capacity).
+    - (Assumption: Since it is not required to integrate with a real notification APIs like publish/subscribe or websockets to broadcast messages, the service may go down when handling a large group. If there is a group notification where the group contains a large num of users, that might exceed the limited provider capacity).
        
     
       So, after saving the notification instances to the database, the job processor will fetch
       a limited amount of notifications and send them to users.
 
-4. **Used design patterns**
+4. **Used Design patterns**
 
     - Factory method design pattern.
     - Template design pattern.
@@ -107,7 +107,7 @@
 **Notification  APIs**
 - How another microservice would contact this service to send a notification.
 
-1- Send   Notification:
+1- Send Notification:
 
      - Group notification
     
